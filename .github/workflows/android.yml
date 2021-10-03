@@ -35,8 +35,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '15'
+          distribution: 'adopt'
+          cache: gradle
       - name: Build APK
-        run: bash ./gradlew assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --no-daemon
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
