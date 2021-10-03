@@ -120,6 +120,10 @@ android {
         jniLibs.srcDir rootProject.file('libs')
     }
     ndkVersion '21.3.6528147'
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 repositories {
