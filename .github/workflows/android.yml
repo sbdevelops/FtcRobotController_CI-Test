@@ -43,5 +43,5 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: apk
-          path: app-debug.apk
+          path: TeamCode/build/outputs/apk/debug/TeamCode-debug.apk
           retention-days: 1
