@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: set up JDK 11
+    - name: set up JDK 15
       uses: actions/setup-java@v2
       with:
         java-version: '15'
@@ -21,7 +21,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build --stacktrace
+      run: ./gradlew build --info
       
   apk:
     name: Generate APK
