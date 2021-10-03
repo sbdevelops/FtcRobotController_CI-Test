@@ -1,12 +1,10 @@
 name: Android CI
 
-on:
-  push:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +25,7 @@ jobs:
   apk:
     name: Generate APK
     needs: build
+    if: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,6 +41,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
-          name: apk
+          name: FtcRobotController_7373-debug.apk
           path: TeamCode/build/outputs/apk/debug/TeamCode-debug.apk
           retention-days: 1
