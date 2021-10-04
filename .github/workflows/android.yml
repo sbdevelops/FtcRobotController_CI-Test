@@ -39,7 +39,7 @@ jobs:
       - name: Build APK
         run: ./gradlew assembleDebug --no-daemon
       - name: Upload APK
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: FtcRobotController_7373-debug.apk
           path: TeamCode/build/outputs/apk/debug/TeamCode-debug.apk
